@@ -4,7 +4,7 @@ import sys
 from colorama import Fore
 from random import choice
 
-colors_list = [Fore.BLACK, Fore.BLUE, Fore.GREEN, Fore.YELLOW, Fore.RED, Fore.WHITE]
+colors_list = [Fore.BLACK, Fore.BLUE, Fore.GREEN, Fore.YELLOW, Fore.RED, Fore.WHITE, Fore.CYAN, Fore.MAGENTA]
 
 argv = sys.argv
 filename = argv[2]
@@ -23,7 +23,7 @@ fileContents = file.read(1024)
 count = 1
 while fileContents != bytes():
     conn.send(fileContents)
-    print(choice(colors_list) + f'sended {len(fileContents)}')
+    print(choice(colors_list) + f'sended {len(fileContents)} - {count}')
     fileContents = file.read(1024)
     count += 1
 
